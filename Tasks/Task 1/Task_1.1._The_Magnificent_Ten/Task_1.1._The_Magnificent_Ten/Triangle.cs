@@ -6,14 +6,10 @@ namespace Task_1._1._The_Magnificent_Ten
 {
     class Triangle
     {
-        public static void Tria()
+        public static void Tria() //task 1.1.2
         {
             int a;
-
-            do
-            {
-                a = Read_Int();
-            }
+            do  a = Read_Int();
             while (a <= 0);
 
             for (int i = 1; i < a+1; i++)
@@ -25,6 +21,34 @@ namespace Task_1._1._The_Magnificent_Ten
                 }
                 Console.WriteLine(" ");
             }
+        }
+
+        public static void AnotherTria() //task 1.1.3
+        {
+            int a;
+            do a = Read_Int();
+            while (a <= 0);
+
+            for (int i = 1; i < a + 1; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    a++;
+                    i++;
+                }
+                for (int q = 0; q < a - i; q++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+
+                }
+                Console.WriteLine(" ");
+            }
+
+
         }
         static int Read_Int()
         {

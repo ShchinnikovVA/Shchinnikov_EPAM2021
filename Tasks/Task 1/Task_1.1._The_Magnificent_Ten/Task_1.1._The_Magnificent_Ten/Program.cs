@@ -28,6 +28,9 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "3":
                         {
+                            Triangle.AnotherTria();
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "4":
