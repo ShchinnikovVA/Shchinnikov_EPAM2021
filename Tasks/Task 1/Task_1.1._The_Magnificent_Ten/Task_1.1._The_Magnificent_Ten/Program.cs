@@ -4,7 +4,8 @@ namespace Task_1._1._The_Magnificent_Ten
 {
     class Program
     {
-        static void Main(string[] args)
+        
+        public static void Main(string[] args)
         {
             var menu = GetMenuStart();
 
@@ -49,6 +50,7 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "6":
                         {
+                            FontAdjustment.Font();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
@@ -94,7 +96,7 @@ namespace Task_1._1._The_Magnificent_Ten
                 }
             }
         }
-        static string GetMenuStart()
+        public static string GetMenuStart()
         {
             Console.WriteLine("Выберите действие: ");
             Console.WriteLine(" 1 - Rectangle");
