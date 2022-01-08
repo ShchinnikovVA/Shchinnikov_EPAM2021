@@ -9,7 +9,7 @@ namespace Task_1._1._The_Magnificent_Ten
         public static void Tria() //task 1.1.2
         {
             int a;
-            do  a = Read_Int();
+            do a = Program.Read_Int("Введите число, получите треугольник)))");
             while (a <= 0);
 
             for (int i = 1; i < a+1; i++)
@@ -26,7 +26,7 @@ namespace Task_1._1._The_Magnificent_Ten
         public static void AnotherTria() //task 1.1.3
         {
             int a;
-            do a = Read_Int();
+            do a = Program.Read_Int("Введите число, получите треугольник)))");
             while (a <= 0);
 
             Stars(a, false, a);
@@ -35,7 +35,7 @@ namespace Task_1._1._The_Magnificent_Ten
         public static void XMasTree() //не работает как надо
         {
             int a;
-            do a = Read_Int();
+            do a = Program.Read_Int("Введите число, получите треугольник)))");
             while (a <= 0);
 
             for (int i = 1; i < a + 1; i++)
@@ -78,25 +78,6 @@ namespace Task_1._1._The_Magnificent_Ten
         }
         
 
-        static int Read_Int()
-        {
-            string reader;
-            int num;
-            do
-            {
-                Console.WriteLine("Введите число, получите треугольник)))");
-                reader = Console.ReadLine();
-            }
-            while (!int.TryParse(reader, out num));
-
-            if (num <= 0)
-            {
-                Console.WriteLine("Значение не должно быть меньше или равно нулю!");
-                return 0;
-
-            }
-            else return num;
-
-        }
+       
     }
 }

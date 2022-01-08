@@ -42,26 +42,39 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "5":
                         {
+                            Console.WriteLine(SumOfNumbers.Sum());
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "6":
                         {
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "7":
                         {
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "8":
                         {
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "9":
                         {
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "10":
                         {
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "0": 
@@ -71,7 +84,9 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     default:
                         {
-                            Console.WriteLine("Неверный вариант!");
+                            Console.WriteLine("Неверный вариант!"); 
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                         
@@ -97,43 +112,25 @@ namespace Task_1._1._The_Magnificent_Ten
             return Console.ReadLine();
         }
 
-        //static int Rectangle()
-        //{
-        //    string reader;
-        //    int a, b;
-        //    //проблемы с вводом строки вместо числа
-        //    do
-        //    {
-        //        Console.WriteLine("Введите длину стороны A треугольника");
-        //        reader = Console.ReadLine();
-        //        if (Convert.ToInt32(reader) <= 0)
-        //        {
-        //            do
-        //            {
-        //                Console.WriteLine("Значение должно быть больше нуля!");
-        //                reader = Console.ReadLine();
-        //            }
-        //            while (Convert.ToInt32(reader) <= 0);
-        //        }
+        public static int Read_Int(string message)
+        {
+            string reader;
+            int num;
+            do
+            {
+                Console.WriteLine(message);
+                reader = Console.ReadLine();
+            }
+            while (!int.TryParse(reader, out num));
 
-        //    }
-        //    while (!int.TryParse(reader, out a));
-        //    do
-        //    {
-        //        Console.WriteLine("Введите длину стороны B треугольника");
-        //        reader = Console.ReadLine();
-        //        if (Convert.ToInt32(reader) <= 0)
-        //        {
-        //            do
-        //            {
-        //                Console.WriteLine("Значение должно быть больше нуля!");
-        //                reader = Console.ReadLine();
-        //            }
-        //            while (Convert.ToInt32(reader) <= 0);
-        //        }
-        //    }
-        //    while (!int.TryParse(reader, out b));
-        //    return a * b;
-        //}
+            if (num <= 0)
+            {
+                Console.WriteLine("Значение не должно быть меньше или равно нулю!");
+                return 0;
+
+            }
+            else return num;
+
+        }
     }
 }
