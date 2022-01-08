@@ -35,6 +35,9 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "4":
                         {
+                            Triangle.XMasTree();
+                            Console.WriteLine(" ");
+                            menu = GetMenuStart();
                             break;
                         }
                     case "5":

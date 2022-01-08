@@ -36,20 +36,54 @@ namespace Task_1._1._The_Magnificent_Ten
                     a++;
                     i++;
                 }
+
                 for (int q = 0; q < a - i; q++)
                 {
                     Console.Write(" ");
                 }
+
                 for (int j = 0; j < i; j++)
                 {
                     Console.Write("*");
-
                 }
                 Console.WriteLine(" ");
             }
-
-
         }
+
+        public static void XMasTree()
+        {
+            int a;
+            do a = Read_Int();
+            while (a <= 0);
+
+            
+            for (int i = 1; i < a + 1; i++)
+            {
+                for (int r = 1; r < a - (a - i)+1; r++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        a++;
+                        i++;
+                    }
+
+                    for (int q = 0; q < a - i; q++)
+                    {
+                        Console.Write(" ");
+                    }
+
+                    for (int j = 0; j < i; j++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine(" ");
+                }
+            }
+            
+        }
+
+        
+
         static int Read_Int()
         {
             string reader;
