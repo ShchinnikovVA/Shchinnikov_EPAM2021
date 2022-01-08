@@ -29,6 +29,23 @@ namespace Task_1._1._The_Magnificent_Ten
             do a = Read_Int();
             while (a <= 0);
 
+            Stars(a, false, a);
+        }
+
+        public static void XMasTree() //не работает как надо
+        {
+            int a;
+            do a = Read_Int();
+            while (a <= 0);
+
+            for (int i = 1; i < a + 1; i++)
+            {
+                Stars(i, true, a);
+            }
+        }
+
+        static void Stars(int a, bool spaces, int max)
+        {
             for (int i = 1; i < a + 1; i++)
             {
                 if (i % 2 == 0)
@@ -37,10 +54,20 @@ namespace Task_1._1._The_Magnificent_Ten
                     i++;
                 }
 
+                //if (spaces) // проблемы с выставлением пробелов
+                //{
+                //    for (int r = i; r > 0; r--)
+                //    {
+                //        Console.Write(" ");
+
+                //    }
+                //}
+
                 for (int q = 0; q < a - i; q++)
                 {
                     Console.Write(" ");
                 }
+                
 
                 for (int j = 0; j < i; j++)
                 {
@@ -49,39 +76,6 @@ namespace Task_1._1._The_Magnificent_Ten
                 Console.WriteLine(" ");
             }
         }
-
-        public static void XMasTree()
-        {
-            int a;
-            do a = Read_Int();
-            while (a <= 0);
-
-            
-            for (int i = 1; i < a + 1; i++)
-            {
-                for (int r = 1; r < a - (a - i)+1; r++)
-                {
-                    if (i % 2 == 0)
-                    {
-                        a++;
-                        i++;
-                    }
-
-                    for (int q = 0; q < a - i; q++)
-                    {
-                        Console.Write(" ");
-                    }
-
-                    for (int j = 0; j < i; j++)
-                    {
-                        Console.Write("*");
-                    }
-                    Console.WriteLine(" ");
-                }
-            }
-            
-        }
-
         
 
         static int Read_Int()
