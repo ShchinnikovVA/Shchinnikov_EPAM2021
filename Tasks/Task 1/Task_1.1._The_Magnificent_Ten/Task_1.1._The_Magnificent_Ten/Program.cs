@@ -57,12 +57,32 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "7":
                         {
+                            Console.WriteLine("Есть массив случайных чисел.");
+                            Console.WriteLine(" Искать MAX - 1; Искать MIN - 2");
+                            Console.WriteLine("Введите любое другое значение для выхода");
+                            var str = Console.ReadLine();
+                            switch (str)
+                            {
+                                case "1":
+                                    {
+                                        SumOfNumbers.MaxMinArray(true);
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        SumOfNumbers.MaxMinArray(false);
+                                        break;
+                                    }
+                                default: break;
+                            }
+
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
                         }
                     case "8":
                         {
+                            
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
