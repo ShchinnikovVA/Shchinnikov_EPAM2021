@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_1.2_String_not_Sting", "Task_1.2_String_not_Sting\Task_1.2_String_not_Sting.csproj", "{DFBE26B3-1060-421E-B5EB-B637C7DE92C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFBE26B3-1060-421E-B5EB-B637C7DE92C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBE26B3-1060-421E-B5EB-B637C7DE92C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBE26B3-1060-421E-B5EB-B637C7DE92C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBE26B3-1060-421E-B5EB-B637C7DE92C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {028F12FD-890E-4880-9D97-792E4FE386C4}
+	EndGlobalSection
+EndGlobal
