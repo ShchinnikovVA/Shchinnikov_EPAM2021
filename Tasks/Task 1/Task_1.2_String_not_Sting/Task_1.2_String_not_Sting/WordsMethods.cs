@@ -80,19 +80,38 @@ namespace Task_1._2_String_not_Sting
 
         public static void Validator()
         {
-            //Console.WriteLine("Введите предложение: ");
-            //string str = Console.ReadLine();
+            Console.WriteLine("Введите предложение: ");
+            string str = Console.ReadLine();
 
-            //char[] separators = new char[] { ' ', ',', '.', '?', '!' };
-            //string[] words = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            char[] separators = new char[] {' '};
+            string[] words = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            str = "";
+            int i = 0;
+            foreach (string word in words)
+            {
+                char[] charWord = word.ToCharArray();
 
-            //foreach (string word in words)
-            //{
-            //    if (Char.IsLower(word, 0)) Char.ToUpper(word[0]);
-            //}
+                
 
-            //str = words.ToString();
-            //Console.WriteLine(str);
+                if (i == 0)
+                {
+                    
+                    if (Char.IsLower(charWord[0])) charWord[0] = Char.ToUpper(charWord[0]);
+                    string thisWord = new string(charWord);
+                    str = str + thisWord + " ";
+                    i++;
+                    
+                }
+                else
+                {
+                    str = str + word + " ";
+                }
+                if (charWord[^1] == '.' || charWord[^1] == '!' || charWord[^1] == '?') i = 0;
+
+
+            }
+
+            Console.WriteLine(str);
         }
     }
 }
