@@ -82,7 +82,7 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "8":
                         {
-                            
+                            SumOfNumbers.ThreeDimensionalArray();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;

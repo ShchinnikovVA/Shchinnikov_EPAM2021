@@ -23,13 +23,13 @@ namespace Task_1._1._The_Magnificent_Ten
         public static void MaxMinArray(bool max)
         {
             Random r = new Random();
-            int n = Program.Read_Int("Введите число элементов массива");
+            int n = Program.Read_Int("Введите количество элементов массива");
             int[] arr = new int[n];
 
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = r.Next(1000);
-            }
+                arr[i] = r.Next(-100, 100);
+            } 
 
             int count = arr[0];
 
@@ -50,9 +50,71 @@ namespace Task_1._1._The_Magnificent_Ten
             Console.WriteLine(" ");
             if (max) Console.WriteLine("Максимальное значение массива = " + count);
             else Console.WriteLine("Минимальное значение массива = " + count);
+        }
 
+        public static void ThreeDimensionalArray()
+        {
+            Random r = new Random();
+            Console.WriteLine("Настройте размер трёхмерного массива: ");
+            int x = Program.Read_Int("Введите значение длины массива");
+            int y = Program.Read_Int("Введите значение ширины массива");
+            int z = Program.Read_Int("Введите значение высоты массива");
+            int[,,] arr = new int[x, y, z];
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    for (int q = 0; q < z; q++)
+                    {
+                        arr[i,j,q] = r.Next(-100, 100);
+                    }
+                }
+            }
+
+            Array3D_toConsole(arr);
+            Console.WriteLine("Обнулить все положительные числа?");
+            Console.WriteLine("y - Выполнить; Любая другая клавиша для выхода");
+            string str = Console.ReadLine();
+            if (str == "y")
+            {
+                for (int i = 0; i < x; i++)
+                {
+                    for (int j = 0; j < y; j++)
+                    {
+                        for (int q = 0; q < z; q++)
+                        {
+                            if(arr[i,j,q] > 0) arr[i, j, q] = 0;
+                        }
+                    }
+                }
+                Array3D_toConsole(arr);
+            }
+            
 
         }
+
+        static void Array3D_toConsole(int[,,] arr)
+        {
+            Console.WriteLine("Ваш массив: ");
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                Console.WriteLine("Лист №" + (i + 1));
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    for (int q = 0; q < arr.GetLength(2); q++)
+                    {
+                        Console.Write("[{0}] ", arr[i, j, q]);
+                    }
+                    Console.WriteLine(" ");
+                }
+                Console.WriteLine("========");
+            }
+        }
+       
+
+
+
 
     }
 }
