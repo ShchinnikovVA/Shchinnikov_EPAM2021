@@ -29,7 +29,11 @@ namespace Task_1._1._The_Magnificent_Ten
             do a = Program.Read_Int("Введите число, получите треугольник)))");
             while (a <= 0);
 
-            Stars(a, false, a);
+            List<string> str = Stars(a);
+            for (int i = 0; i < a; i++)
+            {
+                Console.WriteLine(str[i]);
+            }
         }
 
         public static void XMasTree() //не работает как надо
@@ -40,14 +44,30 @@ namespace Task_1._1._The_Magnificent_Ten
 
             for (int i = 1; i < a + 1; i++)
             {
-                Stars(i, true, a);
+                //if (i % 2 == 0)
+                //{
+                //    //a++;
+                //    i += 2;
+                //}
+                List<string> str = Stars(i);
+                for (int j = 0; j < i; j++)
+                {
+                    for (int q = 0; q < a - i; q++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.WriteLine(str[j]);
+                }
             }
         }
 
-        static void Stars(int a, bool spaces, int max)
+        static List<string> Stars(int a) // должен возвращать массив строк
         {
+            List<string> starStr = new List<string>();
+
             for (int i = 1; i < a + 1; i++)
             {
+                List<char> starChar = new List<char>();
                 if (i % 2 == 0)
                 {
                     a++;
@@ -56,17 +76,18 @@ namespace Task_1._1._The_Magnificent_Ten
 
                 for (int q = 0; q < a - i; q++)
                 {
-                    Console.Write(" ");
+                    starChar.Add(' ');
                 }
                 
                 for (int j = 0; j < i; j++)
                 {
-                    Console.Write("*");
+                    starChar.Add('*');
                 }
-                Console.WriteLine(" ");
+                string str = new string(starChar.ToArray());
+                starStr.Add(str);
             }
 
-
+            return starStr;
         }
         
     }
