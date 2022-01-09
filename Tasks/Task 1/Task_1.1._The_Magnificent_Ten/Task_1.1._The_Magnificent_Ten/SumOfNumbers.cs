@@ -39,6 +39,26 @@ namespace Task_1._1._The_Magnificent_Ten
                 }
             }
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            Console.Write("Отсортированный массив: ");
+            Console.WriteLine(" ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("arr[{0}] = {1}", i, arr[i]);
+            }
+
             Console.WriteLine(" ");
             if (max) Console.WriteLine("Максимальное значение массива = " + count);
             else Console.WriteLine("Минимальное значение массива = " + count);
