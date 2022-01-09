@@ -13,13 +13,11 @@ namespace Task_1._2_String_not_Sting
             char[] separators = new char[] { ' ', ',' , '.', '?', '!' };
             string[] words = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
-            int i = 0;
             int sum = 0;
 
             foreach (string word in words)
             {
                 sum += word.Length;
-                i++;
             }
 
             Console.WriteLine("Среднее число букв в словах: " + sum/words.Length); // Округляется вниз до целого
@@ -65,12 +63,36 @@ namespace Task_1._2_String_not_Sting
 
         public static void LowerCase()
         {
+            int n = 0;
+            Console.WriteLine("Введите предложение: ");
+            string str = Console.ReadLine();
 
+            char[] separators = new char[] { ' ', ',', '.', '?', '!' };
+            string[] words = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string word in words)
+            {
+                if (Char.IsLower(word, 0)) n++;
+            }
+
+            Console.WriteLine("Количество слов с маленькой буквы: " + n);
         }
 
         public static void Validator()
         {
+            //Console.WriteLine("Введите предложение: ");
+            //string str = Console.ReadLine();
 
+            //char[] separators = new char[] { ' ', ',', '.', '?', '!' };
+            //string[] words = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+            //foreach (string word in words)
+            //{
+            //    if (Char.IsLower(word, 0)) Char.ToUpper(word[0]);
+            //}
+
+            //str = words.ToString();
+            //Console.WriteLine(str);
         }
     }
 }
