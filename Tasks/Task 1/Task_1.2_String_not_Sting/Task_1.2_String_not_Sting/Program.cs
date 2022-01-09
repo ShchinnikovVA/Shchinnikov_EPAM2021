@@ -14,25 +14,28 @@ namespace Task_1._2_String_not_Sting
                 {
                     case "1":
                         {
-                            Averages.AverageNumber();
+                            WordsMethods.Averages();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
                         }
                     case "2":
                         {
+                            WordsMethods.Doubler();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
                         }
                     case "3":
                         {
+                            WordsMethods.LowerCase();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
                         }
                     case "4":
                         {
+                            WordsMethods.Validator();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
