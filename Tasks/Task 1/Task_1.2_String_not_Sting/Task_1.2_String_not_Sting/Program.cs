@@ -14,6 +14,7 @@ namespace Task_1._2_String_not_Sting
                 {
                     case "1":
                         {
+                            Averages.AverageNumber();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
