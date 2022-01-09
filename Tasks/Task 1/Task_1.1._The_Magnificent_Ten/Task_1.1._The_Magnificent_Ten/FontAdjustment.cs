@@ -48,10 +48,8 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "3":
                         {
-                            string[] args = { "" }; //привет костыльное программирование))))))
                             Console.WriteLine(" ");
-                            Program.Main(args);
-                            break;
+                            return;
                         }
                     default:
                         {

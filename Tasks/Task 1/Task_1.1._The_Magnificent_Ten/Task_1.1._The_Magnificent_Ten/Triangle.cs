@@ -54,30 +54,20 @@ namespace Task_1._1._The_Magnificent_Ten
                     i++;
                 }
 
-                //if (spaces) // проблемы с выставлением пробелов
-                //{
-                //    for (int r = i; r > 0; r--)
-                //    {
-                //        Console.Write(" ");
-
-                //    }
-                //}
-
                 for (int q = 0; q < a - i; q++)
                 {
                     Console.Write(" ");
                 }
                 
-
                 for (int j = 0; j < i; j++)
                 {
                     Console.Write("*");
                 }
                 Console.WriteLine(" ");
             }
+
+
         }
         
-
-       
     }
 }
