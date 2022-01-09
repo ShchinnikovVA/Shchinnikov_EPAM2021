@@ -89,12 +89,14 @@ namespace Task_1._1._The_Magnificent_Ten
                         }
                     case "9":
                         {
+                            SumOfNumbers.NonNegativeSum();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;
                         }
                     case "10":
                         {
+                            SumOfNumbers.AnimeArray();
                             Console.WriteLine(" ");
                             menu = GetMenuStart();
                             break;

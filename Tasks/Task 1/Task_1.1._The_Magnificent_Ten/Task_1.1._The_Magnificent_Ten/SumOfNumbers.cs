@@ -22,15 +22,7 @@ namespace Task_1._1._The_Magnificent_Ten
 
         public static void MaxMinArray(bool max)
         {
-            Random r = new Random();
-            int n = Program.Read_Int("Введите количество элементов массива");
-            int[] arr = new int[n];
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = r.Next(-100, 100);
-            } 
-
+            int[] arr = CreateOneDimensionalArray();
             int count = arr[0];
 
             Console.WriteLine("Представлен массив случайных чисел:");
@@ -50,6 +42,19 @@ namespace Task_1._1._The_Magnificent_Ten
             Console.WriteLine(" ");
             if (max) Console.WriteLine("Максимальное значение массива = " + count);
             else Console.WriteLine("Минимальное значение массива = " + count);
+        }
+
+        static int[] CreateOneDimensionalArray()
+        {
+            Random r = new Random();
+            int n = Program.Read_Int("Введите количество элементов массива");
+            int[] arr = new int[n];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = r.Next(-100, 100);
+            }
+            return arr;
         }
 
         public static void ThreeDimensionalArray()
@@ -112,9 +117,50 @@ namespace Task_1._1._The_Magnificent_Ten
             }
         }
        
+        public static void NonNegativeSum()
+        {
+            int[] arr = CreateOneDimensionalArray();
+            int sum = 0;
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("arr[{0}] = {1}", i, arr[i]);
+                if (arr[i] > 0) sum += arr[i];
+            }
 
+            Console.WriteLine("Сумма положительных чисел массива равна: " + sum);
+        }
 
+        public static void AnimeArray()
+        {
+            Random r = new Random();
+            Console.WriteLine("Настройте размер Двумерного массива: ");
+            int x = Program.Read_Int("Введите значение длины массива");
+            int y = Program.Read_Int("Введите значение ширины массива");
+            int[,] arr = new int[x, y];
+            int sum = 0;
+
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    arr[i, j] = r.Next(-100, 100);
+                    if ((i + j) % 2 == 0) sum += arr[i, j];
+                }
+            }
+
+            Console.WriteLine("Ваш массив: ");
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write("[{0}] ", arr[i, j]);
+                }
+                Console.WriteLine(" ");
+            }
+
+            Console.WriteLine("Сумма всех элементов, стоящих на чётных позициях равна: " + sum);
+        }
 
     }
 }
