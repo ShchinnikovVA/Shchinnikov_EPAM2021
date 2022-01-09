@@ -8,9 +8,10 @@ namespace Task_1._1._The_Magnificent_Ten
     {
         public static void Font()
         {
-            bool bold = false;
-            bool italic = false;
-            bool underline = false;
+            bool[] fonts = { false, false, false }; 
+            //fonts[0] bold;
+            //fonts[1] italic;
+            //fonts[2] underline;
 
             string menu = FontMenu();
 
@@ -18,40 +19,34 @@ namespace Task_1._1._The_Magnificent_Ten
             {
                 switch (menu)
                 {
+                    case "0":
+                        {
+                            if (fonts[0]) fonts[0] = false;
+                            else fonts[0] = true;
+
+                            Console.WriteLine(FontActiveParam(fonts));
+                            menu = FontMenu();
+                            break;
+                        }
                     case "1":
                         {
-                            if (bold)
-                            {
-                                bold = false;
-                                FontActiveParam(bold, 1);
-                            }
-                            else
-                            {
-                                bold = true;
-                                FontActiveParam(bold, 1);
-                            }
-                                
-                            Console.WriteLine(" ");
+                            if (fonts[1])  fonts[1] = false; 
+                            else fonts[1] = true;
+                            
+                            Console.WriteLine(FontActiveParam(fonts));
                             menu = FontMenu();
                             break;
                         }
                     case "2":
                         {
-                            if (italic) italic = false;
-                            else italic = true;
-                            Console.WriteLine(" ");
+                            if (fonts[2]) fonts[2] = false; 
+                            else fonts[2] = true;
+
+                            Console.WriteLine(FontActiveParam(fonts));
                             menu = FontMenu();
                             break;
                         }
                     case "3":
-                        {
-                            if (underline) underline = false;
-                            else underline = true;
-                            Console.WriteLine(" ");
-                            menu = FontMenu();
-                            break;
-                        }
-                    case "4":
                         {
                             string[] args = { "" }; //привет костыльное программирование))))))
                             Console.WriteLine(" ");
@@ -74,42 +69,25 @@ namespace Task_1._1._The_Magnificent_Ten
         static string FontMenu()
         {
             Console.WriteLine("Введите:");
-            Console.WriteLine("     1: bold");
-            Console.WriteLine("     2: italic");
-            Console.WriteLine("     3: underline");
-            Console.WriteLine("     4: back to main menu");
+            Console.WriteLine("     0: bold");
+            Console.WriteLine("     1: italic");
+            Console.WriteLine("     2: underline");
+            Console.WriteLine("     3: back to main menu");
             return Console.ReadLine();
         }
 
-        static string FontActiveParam(bool addFont, int numFontt)
+        static string FontActiveParam(bool[] fonts)
         {
-            string formats = "";
             string b = "bold";
             string i = "italic";
             string u = "underline";
             string ch = "; ";
 
-            switch (numFontt)
-            {
-                case 1:
-                    {
-                        if (addFont)
-                        {
-                            return formats += b + ch;
-                        }
-                        else return formats -= b;
-                        break;
-                    }
-                case 2:
-                    {
-                        break;
-                    }
-                case 3:
-                    {
-                        break;
-                    }
+            string formats = "";
 
-            }
+            if (fonts[0]) formats += b + ch;
+            if (fonts[1]) formats += i + ch;
+            if (fonts[2]) formats += u + ch;
 
             if (formats == "") formats = "none";
             return formats;
