@@ -12,7 +12,6 @@ namespace Task_1._2_String_not_Sting
             string str = Console.ReadLine();
             char[] separators = new char[] { ' ', ',' , '.', '?', '!' };
             string[] words = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-
             int sum = 0;
 
             foreach (string word in words)
@@ -45,7 +44,6 @@ namespace Task_1._2_String_not_Sting
                     }
                 }
             }
-
             string finStr = new string(chars);
             Console.WriteLine(finStr);
         }
@@ -90,27 +88,20 @@ namespace Task_1._2_String_not_Sting
             foreach (string word in words)
             {
                 char[] charWord = word.ToCharArray();
-
-                
-
                 if (i == 0)
                 {
-                    
                     if (Char.IsLower(charWord[0])) charWord[0] = Char.ToUpper(charWord[0]);
                     string thisWord = new string(charWord);
                     str = str + thisWord + " ";
                     i++;
-                    
                 }
                 else
                 {
                     str = str + word + " ";
                 }
+
                 if (charWord[^1] == '.' || charWord[^1] == '!' || charWord[^1] == '?') i = 0;
-
-
             }
-
             Console.WriteLine(str);
         }
     }
