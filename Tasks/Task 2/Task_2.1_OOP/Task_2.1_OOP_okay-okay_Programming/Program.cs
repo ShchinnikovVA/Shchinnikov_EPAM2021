@@ -19,6 +19,16 @@ namespace Task_2._1_OOP_okay_okay_Programming
                             {
                                 case "1": // Сравнение
                                     {
+                                        Console.WriteLine("Введите первую строку");
+                                        string str1 = Console.ReadLine();
+                                        Console.WriteLine("Введите строку для сравнение");
+                                        string str2 = Console.ReadLine();
+
+                                        if (StringIsCharArray.Comparison(str1, str2))
+                                            Console.WriteLine("Строки равны!");
+                                        else
+                                            Console.WriteLine("Строки не равны!");
+
                                         Console.WriteLine();
                                         strMenu = StringMenu();
                                         break;
