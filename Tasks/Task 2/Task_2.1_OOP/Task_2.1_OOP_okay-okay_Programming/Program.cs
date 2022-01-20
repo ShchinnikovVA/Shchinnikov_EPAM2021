@@ -29,38 +29,32 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                         else
                                             Console.WriteLine("Строки не равны!");
 
-                                        Console.WriteLine();
-                                        strMenu = StringMenu();
                                         break;
                                     }
                                 case "2": // Конкатенация
                                     {
-                                        Console.WriteLine();
-                                        strMenu = StringMenu();
+                                        Console.WriteLine("Введите первую строку");
+                                        string str1 = Console.ReadLine();
+                                        Console.WriteLine("Введите вторую строку");
+                                        string str2 = Console.ReadLine();
+                                        Console.WriteLine("Результат: ");
+                                        Console.WriteLine(StringIsCharArray.Concatenation(str1, str2));
                                         break;
                                     }
                                 case "3": //  Поиск символов
                                     {
-                                        Console.WriteLine();
-                                        strMenu = StringMenu();
                                         break;
                                     }
                                 case "4": // Конвертация массива символов
                                     {
-                                        Console.WriteLine();
-                                        strMenu = StringMenu();
                                         break;
                                     }
                                 case "5": //
                                     {
-                                        Console.WriteLine();
-                                        strMenu = StringMenu();
                                         break;
                                     }
                                 case "6": //
                                     {
-                                        Console.WriteLine();
-                                        strMenu = StringMenu();
                                         break;
                                     }
                                 case "0": // Назад
@@ -147,6 +141,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
 
         static string StringMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("Выберите действие со строками: ");
             Console.WriteLine(" 1 - Сравнение");
             Console.WriteLine(" 2 - Конкатенация");
@@ -160,6 +155,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
 
         static string FigureMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("Выберите действие с фигурами: ");
             Console.WriteLine(" 1 - Добавить фигуру");
             Console.WriteLine(" 2 - Показать все фигуры");
