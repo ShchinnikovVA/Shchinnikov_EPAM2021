@@ -32,5 +32,22 @@ namespace EpamClassLibrary
             sb.Append(str2); // добавляем вторую
             return sb.ToString();
         }
+
+        public static string ArrayToString()
+        {
+            char[] chars = new char[Numbers.Read_Int("Введите длину массива: ")];
+            for (int i = 0; i < chars.Length; i++)
+            {
+                Console.WriteLine("Введите символ [{0}]: ", i+1);
+                chars[i] = Convert.ToChar(Console.ReadLine()[0]); //Считывается только первый символ строки
+            }
+            return new string(chars);
+        }
+
+        //public static char[] StringToArray(string str)
+        //{
+        //    return str.ToCharArray();
+        //}
+       
     }
 }

@@ -43,18 +43,39 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                     }
                                 case "3": //  Поиск символов
                                     {
+                                        Console.WriteLine("Введите первую строку");
+                                        string str1 = Console.ReadLine();
+                                        Console.WriteLine("Введите символ(ы)");
+                                        string str2 = Console.ReadLine();
+                                        Console.WriteLine("Результат: ");
+                                        StringForThisTask.GoFindChar(str1,str2);
                                         break;
                                     }
                                 case "4": // Конвертация массива символов
                                     {
+                                        Console.WriteLine("Выберите действие");
+                                        Console.WriteLine(" 1 - Из строки в массив");
+                                        Console.WriteLine(" 2 - Из массива в строку");
+                                        string num = Console.ReadLine();
+                                        if (num == "1")
+                                        {
+                                            //Console.WriteLine("Ваша строка:");
+                                            Console.WriteLine(StringIsCharArray.ArrayToString());
+                                        }
+                                        if (num == "2")
+                                        {
+                                            Console.WriteLine("Введите строку: ");
+                                            char[] ch = Console.ReadLine().ToCharArray();
+                                            for (int i = 0; i < ch.Length; i++)
+                                            {
+                                                Console.WriteLine("Символ №{0} = {1}", i, ch[i]);
+                                            }
+                                        }
                                         break;
                                     }
-                                case "5": //
+                                case "5": // Говорящий Владимир
                                     {
-                                        break;
-                                    }
-                                case "6": //
-                                    {
+                                        Console.WriteLine(StringForThisTask.ThatSaidVladimir());
                                         break;
                                     }
                                 case "0": // Назад
@@ -147,8 +168,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
             Console.WriteLine(" 2 - Конкатенация");
             Console.WriteLine(" 3 - Поиск Символов");
             Console.WriteLine(" 4 - Конвертация массива символов");
-            Console.WriteLine(" 5 - ");
-            Console.WriteLine(" 6 - ");
+            Console.WriteLine(" 5 - Мой говорящий Владимир");
             Console.WriteLine(" 0 - Назад");
             return Console.ReadLine();
         }
