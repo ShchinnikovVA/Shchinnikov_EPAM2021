@@ -5,40 +5,97 @@ using EpamClassLibrary;
 
 namespace Task_2._1_OOP_okay_okay_Programming
 {
-    class MyFigure
+    public class MyFigure
     {
-        List<object> figures = new List<object>();
+        List<Figure> figures = new List<Figure>();
 
-        public void ShowListFigure()
+        public void ShowListFigure<T>() //Показать все фигуры
         {
             for (int i = 0; i < figures.Count; i++)
             {
-                Console.Write("№{0} - ", i);
-                //figures[i].PrintFigure();
+                if (figures[i] is T)
+                {
+                    Console.Write("№{0} - ", i + 1);
+                    figures[i].PrintFigure();
+                }
             }
         }
-        public void CreateDot()
+        public Dot CreateDot() // Создать точку
         {
             Console.WriteLine("Введите имя точки");
             string name = Console.ReadLine();
             int x = Numbers.Read_Int("Введите Х точки");
             int y = Numbers.Read_Int("Введите Y точки");
             Dot d = new Dot(name, x, y);
-            d.PrintFigure();
-            figures.Add(d);
+            d.PrintFigure(); 
+            figures.Add(d); // Добавляем точку в список
+            return d;
         }
 
-        //public void CreateLine()
-        //{
-        //    Dot d1 = 
-        //}
-        public void CreateLine(Dot d1, Dot d2)
+        public void LineTypeCheck() // Создать линию
+        {
+            Console.WriteLine("Выберите действие");
+            Console.WriteLine(" 1 - Содать новую линию; 2 - Создать линию из существующих точек");
+            var menu = Console.ReadLine();
+            switch (menu)
+            {
+                case "1": // Создание линии из двух новых точек
+                    {
+                        CreateLine();
+                        break;
+                    }
+                case "2": // Создание линии из существующих точек
+                    {
+                        ShowListFigure<Dot>(); // Выводим на экран только точки
+                        CreateLine(
+                            NumberFigure<Dot>("Введите номер первой точки") as Dot, 
+                            NumberFigure<Dot>("Введите номер второй точки") as Dot);
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Неверный вариант!");
+                        Console.WriteLine();
+                        break;
+                    }
+            }
+        }
+
+        private Figure NumberFigure<T>( string message ) // Метод проверки типа фигуры
+        {
+            int num = 0;
+            do
+            {
+                num = Numbers.Read_Int(message) - 1;
+            }
+            while (figures[num].GetType() != typeof(T));
+            return figures[num];
+        }
+        private void CreateLine() // Сохдание линии из новых точек
+        {
+            Console.WriteLine("Для создания линии необходимо две точки:");
+            Dot d1 = CreateDot();
+            Dot d2 = CreateDot();
+            Line l = new Line(d1, d2);
+            l.PrintFigure();
+            figures.Add(l);
+
+        }
+        private void CreateLine(Dot d1, Dot d2) // Создание линии из существующих точек
         {
             Line l = new Line(d1, d2);
+            l.PrintFigure();
+            figures.Add(l);
         }
     }
 
-    class Dot
+    public abstract class Figure // фигуры слева направо
+    {
+        internal abstract void PrintFigure();
+        internal abstract void ShowSpecifications();
+    }
+
+    public class Dot : Figure
     {
          string _name;
          int _x;
@@ -54,7 +111,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
             _x = x;
             _y = y;
         }
-        public void PrintFigure() // выводим в консоль точку
+        internal override void PrintFigure() // выводим в консоль точку
         {
             Console.WriteLine("Точка {0}({1},{2})", _name, _x, _y);
         }
@@ -74,8 +131,10 @@ namespace Task_2._1_OOP_okay_okay_Programming
         {
             return _name;
         }
+
+        internal override void ShowSpecifications() { } // Метод пустышка
     }
-    class Line
+    public class Line : Figure
     {
         Dot _dot_x;
         Dot _dot_y;
@@ -91,14 +150,14 @@ namespace Task_2._1_OOP_okay_okay_Programming
             // рассчёт длины линии
         }
 
-        public void PrintFigure()
+        internal override void PrintFigure() // Выводит линию
         {
             Console.WriteLine("Линия {0}({1},{2})", _name, _dot_x.Coordinates(), _dot_y.Coordinates());// выводим линию с координатами точек
         }
 
-        public void LineLenght()
+        internal override void ShowSpecifications() // Выводит характеристики линии
         {
-            Console.WriteLine("Длина линии {0} = {1}", _name, Return_Lenght()); // выводим длину линии
+            Console.WriteLine("     Длина линии {0} = {1}", _name, Return_Lenght()); // выводим длину линии
         }
 
         public double Return_Lenght()

@@ -7,6 +7,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
     {
         static void Main(string[] args)
         {
+            MyFigure userFigure = new MyFigure();
             var menu = MainMenu();
             while (true)
             {
@@ -102,12 +103,34 @@ namespace Task_2._1_OOP_okay_okay_Programming
                             {
                                 case "1": // Добавить фигуру
                                     {
+                                        var typeoffigure = TypeOfFigure();
+                                        switch (typeoffigure)
+                                        {
+                                            case "1":
+                                                {
+                                                    userFigure.CreateDot();
+                                                    break;
+                                                }
+                                            case "2":
+                                                {
+                                                    userFigure.LineTypeCheck();
+                                                    break;
+                                                }
+                                            case "0":
+                                                {
+                                                    break;
+                                                }
+                                            default:
+                                                break;
+                                        }
+
                                         Console.WriteLine();
                                         figMenu = FigureMenu();
                                         break;
                                     }
                                 case "2": // Показать все фигуры
                                     {
+                                        userFigure.ShowListFigure<Figure>();
                                         Console.WriteLine();
                                         figMenu = FigureMenu();
                                         break;
@@ -180,6 +203,16 @@ namespace Task_2._1_OOP_okay_okay_Programming
             Console.WriteLine(" 1 - Добавить фигуру");
             Console.WriteLine(" 2 - Показать все фигуры");
             Console.WriteLine(" 3 - Удалить все фигуры");
+            Console.WriteLine(" 0 - Назад");
+            return Console.ReadLine();
+        }
+
+        static string TypeOfFigure()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Выберите Фигуру ");
+            Console.WriteLine(" 1 - Точка");
+            Console.WriteLine(" 2 - Линия");
             Console.WriteLine(" 0 - Назад");
             return Console.ReadLine();
         }
