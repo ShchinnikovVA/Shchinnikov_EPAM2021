@@ -130,7 +130,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                     }
                                 case "2": // Показать все фигуры
                                     {
-                                        userFigure.ShowListFigure<Figure>();
+                                        userFigure.ShowListFigure<Figure>(true);
                                         Console.WriteLine();
                                         figMenu = FigureMenu();
                                         break;
