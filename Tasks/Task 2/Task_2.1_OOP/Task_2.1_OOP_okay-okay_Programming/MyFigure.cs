@@ -106,7 +106,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
             l.PrintFigure();
             figures.Add(l);
         }
-        private void CreateTriangle()
+        public void CreateTriangle()
         {
             Console.WriteLine("Для создания линии необходимо три вершины:");
             Dot d1 = CreateDot();
@@ -119,6 +119,27 @@ namespace Task_2._1_OOP_okay_okay_Programming
             t.PrintFigure();
             figures.Add(t);
         }
+        public void CreateSquare()
+        {
+            Console.WriteLine("Введите имя квадрата");
+            string name = Console.ReadLine();
+            int a = Numbers.Read_Int("Введите длину его стороны");
+            Square s = new Square(name, a);
+            Console.WriteLine();
+            s.PrintFigure();
+            figures.Add(s);
+        }
+        public void CreateRectangle()
+        {
+            Console.WriteLine("Введите имя прямоугольника");
+            string name = Console.ReadLine();
+            int a = Numbers.Read_Int("Введите длину его первой стороны");
+            int b = Numbers.Read_Int("Введите длину его второй стороны");
+            Rectangle r = new Rectangle(name, a, b);
+            Console.WriteLine();
+            r.PrintFigure();
+            figures.Add(r);
+        }
     }
 
     public abstract class Figure // фигуры слева направо
@@ -126,6 +147,15 @@ namespace Task_2._1_OOP_okay_okay_Programming
         internal abstract void PrintFigure();
         internal abstract void ShowSpecifications();
     }
+    public abstract class Shape : Figure
+    {
+        protected int _a;
+        protected Shape(int a)
+        {
+            _a = a;
+        }
+    }
+   
 
     public class Dot : Figure
     {
@@ -185,7 +215,6 @@ namespace Task_2._1_OOP_okay_okay_Programming
         }
         //public double Return_Lenght() => _lenght;
     }
-
     class Triangle : Figure
     {
         Dot _dot_a;
@@ -210,6 +239,52 @@ namespace Task_2._1_OOP_okay_okay_Programming
         internal override void ShowSpecifications()
         {
             Console.WriteLine("     Площадь треугольника {0} = {1}", _name, _area);
+        }
+    }
+    class Square : Shape
+    {
+        string _name;
+        int _area;
+        int _perimeter;
+        public Square(string name, int a) : base(a)
+        {
+            _name = name;
+            _area = a * a;
+            _perimeter = a * 4;
+        }
+
+        internal override void PrintFigure()
+        {
+            Console.WriteLine("Квадрат {0} со стороной равной {1}", _name, _a);
+        }
+        internal override void ShowSpecifications()
+        {
+            Console.WriteLine("     Площадь квадрата {0} = {1}", _name, _area);
+            Console.WriteLine("     Периметр квадрата {0} = {1}", _name, _perimeter);
+        }
+    }
+    class Rectangle : Shape
+    {
+        string _name;
+        int _b;
+        int _area;
+        int _perimeter;
+        public Rectangle(string name, int a, int b) : base(a)
+        {
+            _b = b;
+            _name = name;
+            _area = a * b;
+            _perimeter = a * 2 + b * 2;
+        }
+
+        internal override void PrintFigure()
+        {
+            Console.WriteLine("Квадрат {0} со сторонми {1} и {2}", _name, _a, _b);
+        }
+        internal override void ShowSpecifications()
+        {
+            Console.WriteLine("     Площадь прямоугльника {0} = {1}", _name, _area);
+            Console.WriteLine("     Периметр прямоугльника {0} = {1}", _name, _perimeter);
         }
     }
 

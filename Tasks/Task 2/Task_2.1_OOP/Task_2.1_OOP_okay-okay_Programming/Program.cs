@@ -116,6 +116,35 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                                     userFigure.LineTypeCheck();
                                                     break;
                                                 }
+                                            case "3":
+                                                {
+                                                    userFigure.CreateTriangle();
+                                                    break;
+                                                }
+                                            case "4":
+                                                {
+                                                    userFigure.CreateSquare();
+                                                    break;
+                                                }
+                                            case "5":
+                                                {
+                                                    userFigure.CreateRectangle();
+                                                    break;
+                                                }
+                                            case "6":
+                                                {
+                                                    break;
+                                                }
+                                            case "7":
+                                                {
+                                                    userFigure.CreateTriangle();
+                                                    break;
+                                                }
+                                            case "8":
+                                                {
+                                                    userFigure.CreateTriangle();
+                                                    break;
+                                                }
                                             case "0":
                                                 {
                                                     break;
@@ -213,6 +242,12 @@ namespace Task_2._1_OOP_okay_okay_Programming
             Console.WriteLine("Выберите Фигуру ");
             Console.WriteLine(" 1 - Точка");
             Console.WriteLine(" 2 - Линия");
+            Console.WriteLine(" 3 - Треугольник");
+            Console.WriteLine(" 4 - Прямоугольник");
+            Console.WriteLine(" 5 - Квадрат");
+            Console.WriteLine(" 6 - Окружность");
+            Console.WriteLine(" 7 - Круг");
+            Console.WriteLine(" 8 - Кольцо");
             Console.WriteLine(" 0 - Назад");
             return Console.ReadLine();
         }
