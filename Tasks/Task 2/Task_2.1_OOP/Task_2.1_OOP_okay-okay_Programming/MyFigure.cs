@@ -35,7 +35,8 @@ namespace Task_2._1_OOP_okay_okay_Programming
         }
         public void RemoveFigures()
         {
-            //figures.RemoveAll(typeof(Figure));
+            figures.Clear();
+            ShowListFigure<Figure>(false);
         }
         public Dot CreateDot() // Создать точку
         {
