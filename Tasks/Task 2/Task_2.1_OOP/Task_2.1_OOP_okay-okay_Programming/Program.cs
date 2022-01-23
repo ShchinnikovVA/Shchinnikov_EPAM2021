@@ -113,7 +113,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                                 }
                                             case "2":
                                                 {
-                                                    userFigure.LineTypeCheck();
+                                                    userFigure.CreateLine();
                                                     break;
                                                 }
                                             case "3":
@@ -133,16 +133,12 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                                 }
                                             case "6":
                                                 {
+                                                    userFigure.CreateRound();
                                                     break;
                                                 }
                                             case "7":
                                                 {
-                                                    userFigure.CreateTriangle();
-                                                    break;
-                                                }
-                                            case "8":
-                                                {
-                                                    userFigure.CreateTriangle();
+                                                    userFigure.CreateRing();
                                                     break;
                                                 }
                                             case "0":
@@ -166,6 +162,7 @@ namespace Task_2._1_OOP_okay_okay_Programming
                                     }
                                 case "3": // Удалить все фигуры
                                     {
+                                        userFigure.RemoveFigures();
                                         Console.WriteLine();
                                         figMenu = FigureMenu();
                                         break;
@@ -245,9 +242,8 @@ namespace Task_2._1_OOP_okay_okay_Programming
             Console.WriteLine(" 3 - Треугольник");
             Console.WriteLine(" 4 - Прямоугольник");
             Console.WriteLine(" 5 - Квадрат");
-            Console.WriteLine(" 6 - Окружность");
-            Console.WriteLine(" 7 - Круг");
-            Console.WriteLine(" 8 - Кольцо");
+            Console.WriteLine(" 6 - Круг");
+            Console.WriteLine(" 7 - Кольцо");
             Console.WriteLine(" 0 - Назад");
             return Console.ReadLine();
         }
